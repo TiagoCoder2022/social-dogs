@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../UserContext'
 import MinhasFotos from "../../Assets/feed.svg?react"
 import Estatisticas from "../../Assets/estatisticas.svg?react"
@@ -14,6 +14,11 @@ const UserHeaderNav = () => {
   const mobile = useMedia('(max-width: 40rem)')
   const [mobileMenu, setMobileMenu] = useState(false)
   const navigate = useNavigate()
+
+  const { pathname } = useLocation()
+  useEffect(() => {
+    setMobileMenu(false)
+  }, [pathname])
  
 
   function handleLogout() {
@@ -30,7 +35,7 @@ const UserHeaderNav = () => {
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
-      <nav className={styles.nav}>
+      <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive}`}>
         <NavLink to="/conta" end>
           <MinhasFotos />
           {mobile && 'Minhas Fotos'}
