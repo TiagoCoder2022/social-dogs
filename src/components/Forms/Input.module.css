@@ -3,21 +3,22 @@
 }
 
 .input {
-  border: 1px solid #eee;
+  border: none;
+  color: #fff;
   display: block;
   width: 100%;
   font-size: 1rem;
   padding: 0.8rem;
   border-radius: 0.4rem;
-  background: #eee;
+  background: #424242;
   transition: 0.2s;
 }
 
 .input:focus,
 .input:hover {
   outline: none;
-  border-color: #fb1;
-  background: white;
+  border-color: #86c232;
+  background: #424242;
   box-shadow: 0 0 0 3px #fea;
 }
 
