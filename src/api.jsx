@@ -62,7 +62,7 @@ export function PHOTO_POST(formData, token) {
   }
 }
 
-export function PHOTOS_GET({page, total, user}) {
+export function PHOTOS_GET({ page, total, user }) {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`, 
     options: {
@@ -82,14 +82,14 @@ export function PHOTO_GET(id) {
   }
 }
 
-export function COMMENT_POST(id, body) {
+export function COMMENT_POST(id, body, token) {
   return {
     url: `${API_URL}/api/comment/${id}`, 
     options: {
       method: 'POST',   
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+        Authorization: 'Bearer ' + token,
       },
       body: JSON.stringify()       
     }    
