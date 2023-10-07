@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const UserContext = createContext()
 
-export const UserStorage = ({children}) => {
+export const UserStorage = ({ children }) => {
   const [data, setData] = useState(null)
   const [login, setLogin] = useState(null)
   const [ loading, setLoading] = useState(false)
@@ -16,8 +16,9 @@ export const UserStorage = ({children}) => {
     setError(null)
     setLoading(false)
     setLogin(false)
-    window.localStorage.removeItem('token')    
-  }, []) 
+    window.localStorage.removeItem('token') 
+    navigate("/login")   
+  }, [navigate]) 
 
   
 

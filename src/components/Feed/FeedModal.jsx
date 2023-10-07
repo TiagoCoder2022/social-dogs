@@ -5,17 +5,20 @@ import Error from '../Helper/Error'
 import Loading from '../Helper/Loading'
 import { PHOTO_GET } from '../../api'
 
-const FeedModal = ({photo}) => {
+const FeedModal = ({ photo, setModalPhoto }) => {
   const {data, error, loading, request} = useFetch()
-
-  function handleOutsideClick(event) {
-    
-  }
 
   useEffect(() => {
     const {url,options} = PHOTO_GET(photo.id)
     request(url, options)
   }, [photo, request])
+
+  function handleOutsideClick(event) {
+    if (event.target === event.currentTarget) {
+      setModalPhoto(null)
+    }      
+  }
+  
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error}/>}
