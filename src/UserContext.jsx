@@ -27,8 +27,7 @@ export const UserStorage = ({ children }) => {
     const response = await fetch(url, options)
     const json = await response.json()
     setData(json)
-    setLogin(true)
-    console.log(json)
+    setLogin(true)    
   }
 
   async function userLogin( username, password) {
