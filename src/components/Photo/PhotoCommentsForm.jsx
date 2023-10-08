@@ -11,6 +11,8 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    
+    // const token = window.localStorage.getItem("token");
     const { url, options } = COMMENT_POST(id, { comment })
     const { response, json } = await request(url, options)
     if(response.ok) {
@@ -20,7 +22,7 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={`${styles.form} ${single ? styles.single : ''}`} onSubmit={handleSubmit}>
       <textarea
         className={styles.textarea}
         id="comment"
