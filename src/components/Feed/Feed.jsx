@@ -12,7 +12,7 @@ const Feed = ({ user }) => {
 
     function infiniteScroll() {
       if (infinite) {
-        const scroll = window.screenY
+        const scroll = window.scrollY
         const height = document.body.offsetHeight - window.innerHeight
 
         if(scroll > height * 0.75 && !wait) {
@@ -35,7 +35,12 @@ const Feed = ({ user }) => {
 
   return (
     <div>
-      {modalPhoto && <FeedModal setModalPhoto={setModalPhoto} photo={modalPhoto}/>}
+      {modalPhoto && (
+        <FeedModal 
+          setModalPhoto={setModalPhoto} 
+          photo={modalPhoto}
+        />
+      )}
       {pages.map((page) => (
         <FeedPhotos 
           key={page}
