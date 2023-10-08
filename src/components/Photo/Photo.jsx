@@ -8,7 +8,7 @@ import PhotoContent from './PhotoContent'
 
 const Photo = () => {
   const { id } = useParams()
-  const { url, loading, error, request } = useFetch()
+  const { data, loading, error, request } = useFetch()
 
   useEffect(() => {
     const  { url, options } = PHOTO_GET(id)
