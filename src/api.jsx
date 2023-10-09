@@ -101,9 +101,22 @@ export function PHOTO_DELETE(id) {
     url: `${API_URL}/api/photo/${id}`, 
     options: {
       method: 'DELETE',   
+      headers: {    
+        'Content-Type': 'application/json',           
+      },  
+      body: JSON.stringify(body)         
+    }    
+  }
+}
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: API_URL + '/api/password/lost',
+    options: {
+      method: 'POST',
       headers: {        
         Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-      },           
-    }    
+      }, 
+    }
   }
 }
