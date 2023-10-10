@@ -115,7 +115,19 @@ export function PASSWORD_LOST(body) {
     options: {
       method: 'POST',
       headers: {        
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+        'Content-Type': 'application/json',   
+      }, 
+    }
+  }
+}
+
+export function PASSWORD_RESET(body) {
+  return {
+    url: API_URL + '/api/password/reset',
+    options: {
+      method: 'POST',
+      headers: {        
+        'Content-Type': 'application/json',   
       }, 
     }
   }
