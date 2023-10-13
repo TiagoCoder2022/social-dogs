@@ -32,19 +32,25 @@ const UserStatsGraphs = ({ data }) => {
           style={{
             data: {
               fillOpacity: .9,
-              stroke: '#fff',
+              stroke: '#eee',
               strokeWidth: 2,
             },
             labels: {
               fontSize: 14,
-              fill: '#fff'
+              fill: '#eee'
             }
           }}
         />
       </div>
       <div className={styles.graphItem}>
-        <VictoryChart>
-          <VictoryBar alignment='start' data={graph}></VictoryBar>
+        <VictoryChart >
+          <VictoryBar 
+            alignment='start' 
+            style={{ 
+              data: { fill: "#eee" },              
+            }}
+            data={graph}
+          ></VictoryBar>
         </VictoryChart>
       </div>
     </section>
