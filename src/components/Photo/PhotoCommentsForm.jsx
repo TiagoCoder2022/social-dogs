@@ -10,11 +10,11 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
   const { request, error } = useFetch()
 
   async function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault()   
     
-    // const token = window.localStorage.getItem("token");
     const { url, options } = COMMENT_POST(id, { comment })
     const { response, json } = await request(url, options)
+    
     if(response.ok) {
       setComment('')
       setComments((comments) => [...comments, json])
