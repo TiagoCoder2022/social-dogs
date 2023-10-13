@@ -22,20 +22,20 @@
 .nav a:focus,
 .nav button:hover,
 .nav button:focus {
-  background: white;
+  background: #6b6e70;
   box-shadow: 0 0 0 3px #eee;
-  border-color: #333;
+  border-color: #eee;
   outline: none;
 }
 
 .nav a:global(.active) {
-  background: white;
-  box-shadow: 0 0 0 3px #fea;
-  borde-color: #fb1;
+  background: #6b6e70;
+  box-shadow: 0 0 0 3px #eee;
+  borde-color: #eee;
 }
 
 .nav a:global(.active) svg > * {
-  fill: #fb1;
+  fill: #eee;
 }
 
 /**** Hamburger Button Animation ******/
