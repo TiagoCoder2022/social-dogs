@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './UserStatsGraphs.module.css'
-import { VictoryPie, VictoryChart, VictoryBar } from 'victory'
+import { VictoryPie, VictoryChart, VictoryBar, VictoryAxis } from 'victory'
 
 const UserStatsGraphs = ({ data }) => {
   const [graph, setGraph] = useState([])
@@ -31,26 +31,32 @@ const UserStatsGraphs = ({ data }) => {
           padding={{top: 20, bottom: 20, left: 80, right: 80}}
           style={{
             data: {
-              fillOpacity: .9,
-              stroke: '#eee',
-              strokeWidth: 2,
+              fillOpacity: 0.9,
+              stroke: '#fb1',
+              strokeWidth: 1,
             },
             labels: {
               fontSize: 14,
               fill: '#eee'
-            }
+            }            
           }}
         />
       </div>
       <div className={styles.graphItem}>
-        <VictoryChart >
+        <VictoryChart>
           <VictoryBar 
             alignment='start' 
             style={{ 
-              data: { fill: "#eee" },              
+              data: { fill: "#fb1" },                                     
             }}
             data={graph}
-          ></VictoryBar>
+          />
+          <VictoryAxis  style={{
+            axis: { stroke: "white" },
+            axisLabel: { fontSize: 20, padding: 30, fill: "white" },
+            ticks: { stroke: "white", size: 5, },
+            tickLabels: { fontSize: 15, padding: 5, fill: "white" }
+          }}/>
         </VictoryChart>
       </div>
     </section>
