@@ -22,7 +22,13 @@ const PhotoComments = (props) => {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} single={props.single} setComments={setComments} />}
+      {login && (
+        <PhotoCommentsForm 
+          id={props.id} 
+          single={props.single} 
+          setComments={setComments} 
+        />
+      )}
     </>
   )
 }
