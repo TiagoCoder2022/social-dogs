@@ -82,18 +82,18 @@ export function PHOTO_GET(id) {
   }
 }
 
-export function COMMENT_POST(id, body, token) {
+export function COMMENT_POST(id, body) {
   return {
-    url: `${API_URL}/api/comment/${id}`, 
+    url: `${API_URL}/api/comment/${id}`,
     options: {
-      method: 'POST',   
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token,
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
       },
-      body: JSON.stringify()       
-    }    
-  }
+      body: JSON.stringify(body),
+    },
+  };
 }
 
 export function PHOTO_DELETE(id) {
@@ -114,11 +114,12 @@ export function PASSWORD_LOST(body) {
     url: API_URL + '/api/password/lost',
     options: {
       method: 'POST',
-      headers: {        
-        'Content-Type': 'application/json',   
-      }, 
-    }
-  }
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
 }
 
 export function PASSWORD_RESET(body) {
@@ -126,11 +127,12 @@ export function PASSWORD_RESET(body) {
     url: API_URL + '/api/password/reset',
     options: {
       method: 'POST',
-      headers: {        
-        'Content-Type': 'application/json',   
-      }, 
-    }
-  }
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
 }
 
 export function STATS_GET() {
