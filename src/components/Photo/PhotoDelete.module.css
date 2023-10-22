@@ -8,6 +8,7 @@
   cursor: pointer;
   border-radius: 0.4rem;
   transition: 0.1s;
+  color: #333;
 }
 
 .delete:focus,
