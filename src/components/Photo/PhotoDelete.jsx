@@ -16,7 +16,7 @@ const PhotoDelete = ({ id }) => {
 
       if (response.ok) {
         window.location.reload();
-        navigate("/conta");
+        //navigate("/conta");
       }
     }
   }
