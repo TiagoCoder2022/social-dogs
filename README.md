@@ -2,11 +2,18 @@
 
 ![Dogs](https://github.com/TiagoCoder2022/social-dogs/assets/119512258/007e7b1a-51a3-4ea3-b657-979a7679adff)
 
-## 🧾 About
+## About 🧾
 
  This project is a social media for dogs, created in Origamid's React course.
+
+ ## Features 
+
+  - Create account
+  - Upload photos
+  - Comment photos
+  - Delete Photos
   
-## 🔧 Technologies used   
+## Technologies used 💻
   
 - ReactJs
 - React-Router
