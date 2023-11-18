@@ -44,7 +44,7 @@ input {
 
 a {
   text-decoration: none;
-  color: #eee;
+  color: #333;
 }
 
 .container {
@@ -78,6 +78,12 @@ a {
   border-radius: 0.2rem;
   z-index: -1;
 } */
+
+.photoTitle {
+  color: #333;
+  font-size: 40px;
+  padding-bottom: 2rem;
+}
 
 .title {
   font-size: 40px;
